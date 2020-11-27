@@ -29,6 +29,7 @@ class UpdateNotifierPlugin : CDVPlugin {
 
     @objc internal func _didFinishLaunchingWithOptions(_ notification : NSNotification) {
         let siren = Siren.shared
+        siren.rulesManager = RulesManager(globalRules: .default, showAlertAfterCurrentVersionHasBeenReleasedForDays: 2)
 
         if let countryCode = self.commandDelegate.settings["sirencountrycode"] as? String {
             siren.apiManager = APIManager(countryCode: countryCode)
