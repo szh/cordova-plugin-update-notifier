@@ -17,36 +17,14 @@ limitations under the License.
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-update-notifier" version="1.1.0">
   <name>cordova-plugin-update-notifier</name>
   <description>Cordova plugin for showing a notification for app updates.</description>
-  <keywords>cordova,ios,android</keywords>
+  <keywords>cordova,android</keywords>
   <license>Apache 2.0</license>
   <repo>https://github.com/AyogoHealth/cordova-plugin-update-notifier.git</repo>
   <issues>https://github.com/AyogoHealth/cordova-plugin-update-notifier/issues</issues>
 
   <engines>
-    <engine name="cordova-ios" version=">= 5.0.0" />
     <engine name="cordova-android" version=">= 8.0.0" />
   </engines>
-
-  <platform name="ios">
-    <config-file parent="/*" target="config.xml">
-      <feature name="UpdateNotifier">
-        <param name="ios-package" value="CDVUpdateNotifierPlugin" />
-        <param name="onload" value="true" />
-      </feature>
-
-      <preference name="SwiftVersion" value="5.0" />
-    </config-file>
-
-    <source-file src="src/ios/UpdateNotifierPlugin.swift" />
-
-    <podspec>
-      <config></config>
-      <pods use-frameworks="true">
-        <pod name="Siren" />
-      </pods>
-    </podspec>
-  </platform>
-
 
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">

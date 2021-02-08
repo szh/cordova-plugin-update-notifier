@@ -20,8 +20,6 @@ cordova-plugin-update-notifier
 This plugin provides a mechanism for showing an in-app notification when a new
 version of the app is available for download from the App Store or Play Store.
 
-For iOS, this uses the [Siren][siren] library.
-
 For Android, this implements the [Play Store In-App Update][playlib] system.
 
 
@@ -56,39 +54,16 @@ Configuration Preferences
 
 ### Alert Type
 
-Siren's implementation for iOS allows for different alert types (see https://github.com/ArtSabintsev/Siren#screenshots). You can set the value to "critical" or "annoying" in config.xml.
-
-```xml
-<preference name="SirenAlertType" value="critical" />
-<preference name="SirenAlertType" value="annoying" />
-```
-
 For Android, you can force all updates to be considered "immediate" with the `AndroidUpdateAlertType` preference in config.xml.
 
 ```xml
 <preference name="AndroidUpdateAlertType" value="Immediate" />
 ```
 
-### Non US-AppStore iOS apps
-
-Siren's implementation for iOS requires specifying a country code if your app is not published to the US AppStore.
-
-```xml
-<preference name="SirenCountryCode" value="CA" />
-```
-
-For Capacitor, add `"SirenCountryCode": "CA"` to your capacitor.config.json file.
-
-
-### Managed App Configuration
-
-When deploying an app using an MDM, you can take advantage of [Managed App Configuration](https://developer.apple.com/library/archive/samplecode/sc2279/Introduction/Intro.html) to disable the update check. Simply create a preference called "DisableUpdateCheck" and set it's value to "true".
-
 Supported Platforms
 -------------------
 
 * **Cordova CLI** (cordova-cli >= 9.0.0)
-* **iOS** (cordova-ios >= 5.0.0, or capacitor)
 * **Android** (cordova-android >= 8.0.0, or capacitor)
 
 
